@@ -1,7 +1,10 @@
 package com.example.android.scorekeeper;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -71,14 +74,32 @@ public class MainActivity extends AppCompatActivity {
      * Resets the game scores
      */
     public void resetScores(View v) {
-        scoreTeamA = 0;
-        scoreTeamB = 0;
-        foulsTeamA = 0;
-        foulsTeamB = 0;
-        displayForTeamA(scoreTeamA);
-        displayForTeamB(scoreTeamB);
-        displayFoulsTeamA(foulsTeamA);
-        displayFoulsTeamB(foulsTeamB);
+
+        new AlertDialog.Builder(this)
+                .setTitle("Reset Scores?")
+                .setMessage("Are you sure you want to reset the game scores?")
+                .setPositiveButton("Reset", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        scoreTeamA = 0;
+                        scoreTeamB = 0;
+                        foulsTeamA = 0;
+                        foulsTeamB = 0;
+                        displayForTeamA(scoreTeamA);
+                        displayForTeamB(scoreTeamB);
+                        displayFoulsTeamA(foulsTeamA);
+                        displayFoulsTeamB(foulsTeamB);
+                        //Log.d("MainActivity", "Sending atomic bombs to Jupiter");
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Log.d("MainActivity", "Aborting mission...");
+                    }
+                })
+                .show();
+
     }
 
     /**
