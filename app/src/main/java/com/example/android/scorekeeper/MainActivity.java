@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
      * Resets the game scores
      */
     public void resetScores(View v) {
-
         new AlertDialog.Builder(this)
                 .setTitle("Reset Scores")
                 .setMessage("Are you sure you want to reset the game scores to 0?")
@@ -97,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
-
     }
 
     /**
