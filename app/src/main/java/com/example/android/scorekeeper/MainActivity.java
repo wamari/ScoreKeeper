@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     public void resetScores(View v) {
 
         new AlertDialog.Builder(this)
-                .setTitle("Reset Scores?")
+                .setTitle("Reset Scores")
                 .setMessage("Are you sure you want to reset the game scores?")
                 .setPositiveButton("Reset", new DialogInterface.OnClickListener() {
                     @Override
@@ -89,13 +89,11 @@ public class MainActivity extends AppCompatActivity {
                         displayForTeamB(scoreTeamB);
                         displayFoulsTeamA(foulsTeamA);
                         displayFoulsTeamB(foulsTeamB);
-                        //Log.d("MainActivity", "Sending atomic bombs to Jupiter");
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Log.d("MainActivity", "Aborting mission...");
                     }
                 })
                 .show();
