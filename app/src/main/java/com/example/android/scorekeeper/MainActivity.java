@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         new AlertDialog.Builder(this)
                 .setTitle("Reset Scores")
-                .setMessage("Are you sure you want to reset the game scores?")
+                .setMessage("Are you sure you want to reset the game scores to 0?")
                 .setPositiveButton("Reset", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
